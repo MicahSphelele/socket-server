@@ -4,7 +4,7 @@
   "description": "This is a small server application\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[C\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C socket.io pp\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001bapplication",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server"
   },
   "keywords": [
     "Socket.io",
