@@ -3,18 +3,17 @@ const app = express();
 const server = require("http").createServer(app);
 const io = require("socket.io")(server);
 
-const port = 3000 | process.env.PORT;
+const PORT = process.env.PORT ||  3000;
 
-app.get('/', (req, res)=>{
-    res.send("Hello Socket Server");
-});
-
-
-  server.listen(port,'0.0.0.0',()=>{
+  server.listen(PORT,'0.0.0.0',()=>{
     console.log(`Server is listening to port ${port}`);
  });
+ 
+app.get('/', (req, res)=>{
+  res.send("Hello Socket Server");
+});
 
-/*io.on("connection", (socket)=>{
+io.on("connection", (socket)=>{
     
     socket.on('connect user', function(user){
         console.log("Connected user " + JSON.stringify(user));
@@ -31,4 +30,4 @@ app.get('/', (req, res)=>{
         io.emit('chat message', msg);
       });
     
-});*/
+});
