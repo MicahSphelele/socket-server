@@ -14,7 +14,7 @@ app.get('/', (req, res)=>{
     console.log(`Server is listening to port ${port}`);
  });
 
-io.on("connection", (socket)=>{
+/*io.on("connection", (socket)=>{
     
     socket.on('connect user', function(user){
         console.log("Connected user " + JSON.stringify(user));
@@ -31,4 +31,4 @@ io.on("connection", (socket)=>{
         io.emit('chat message', msg);
       });
     
-});
+});*/
