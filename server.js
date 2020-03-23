@@ -17,8 +17,10 @@ let array = [];
 
 io.on("connection", (socket)=>{
 
-    console.log("Socket connected : " + socket.handshake.address);
-    /*socket.on('connect user', function(user){
+    console.log("Socket connected = " + socket.handshake.address);
+
+
+    socket.on('connect user', function(user){
         console.log("Connected user " + JSON.stringify(user));
         io.emit('connect user', user);
       });
@@ -31,6 +33,10 @@ io.on("connection", (socket)=>{
       socket.on('chat message', function(msg){
         console.log("Message " + msg['message']);
         io.emit('chat message', msg);
-      });*/
+      })
+
+      socket.on('disconnect', ()=>{
+        console.log("Socket disconnected = " + socket.handshake.address);
+      });
     
 });
