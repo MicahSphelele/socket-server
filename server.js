@@ -14,8 +14,10 @@ app.get('/', (req, res)=>{
 });
 
 io.on("connection", (socket)=>{
-    
-    socket.on('connect user', function(user){
+  
+    console.log("Socket connected : " + JSON.stringify(socket));
+
+    /*socket.on('connect user', function(user){
         console.log("Connected user " + JSON.stringify(user));
         io.emit('connect user', user);
       });
@@ -28,6 +30,6 @@ io.on("connection", (socket)=>{
       socket.on('chat message', function(msg){
         console.log("Message " + msg['message']);
         io.emit('chat message', msg);
-      });
+      });*/
     
 });
