@@ -5,7 +5,7 @@ const io = require("socket.io")(server);
 
 const PORT = process.env.PORT ||  3000;
 
-  server.listen(PORT,'0.0.0.0',()=>{
+  server.listen(PORT,()=>{
     console.log(`Server is listening to port ${PORT}`);
  });
  
@@ -13,10 +13,11 @@ app.get('/', (req, res)=>{
   res.send("Hello Socket Server");
 });
 
-io.on("connection", (socket)=>{
-  
-    console.log("Socket connected : " + JSON.stringify(socket));
+let array = [];
 
+io.on("connection", (socket)=>{
+
+    console.log("Socket connected : " + socket.handshake.address);
     /*socket.on('connect user', function(user){
         console.log("Connected user " + JSON.stringify(user));
         io.emit('connect user', user);
